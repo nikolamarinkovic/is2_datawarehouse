@@ -1,0 +1,35 @@
+A:
+SELECT
+	Measures.Iznos ON COLUMNS,
+	{[Kategorija].Children} ON ROWS,
+	{[Vreme.h1].Children} ON PAGES
+FROM ProdatiArtikli
+============================
+B:
+SELECT 
+	Measures.Kolicina ON COLUMNS,
+	{[MestoProdavca].Children} ON ROWS
+FROM ProdatiArtikli
+============================
+C:
+SELECT
+	Measures.Broj ON COLUMNS,
+	{[Vreme.h0].Children} ON ROWS
+FROM Recenzije
+============================
+D:
+SELECT
+	Measures.Ocena ON COLUMNS,
+	{[Artikal].Children} ON ROWS,
+	{[MestoProdavac].Children} ON PAGES
+FROM Recenzije
+============================
+E:
+SELECT 
+	Measures.OcenaMin ON COLUMNS,
+	{[Prodavac].Children} ON ROWS
+FROM Recenzije
+SELECT 
+	Measures.OcenaMax ON COLUMNS,
+	{[Prodavac].Children} ON ROWS
+FROM Recenzije
